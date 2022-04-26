@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/bellImage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/bell"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="89dp" />
+
+    <Button
+        android:id="@+id/timerBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="305dp"
+        android:layout_marginBottom="306dp"
+        android:backgroundTint="@color/green"
+        android:text="@string/start"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bellImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clocktextView"
+        app:layout_constraintVertical_bias="0.912" />
+
+    <TextView
+        android:id="@+id/clocktextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="194dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="386dp"
+        android:text="@string/_00_60"
+        android:textColor="@color/black"
+        android:textSize="45sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bellImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bellImage" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/bellImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

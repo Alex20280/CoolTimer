@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Cool Timer</string>
+    <string name="start">Start</string>
+    <string name="_00_60">00:60</string>
+</resources>
