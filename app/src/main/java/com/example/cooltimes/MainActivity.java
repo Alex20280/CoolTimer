@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         seekBar = findViewById(R.id.seekBar);
         seekBar.setMax(600);
-        seekBar.setProgress(60);
+        seekBar.setProgress(30);
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -77,12 +77,12 @@ public class MainActivity extends AppCompatActivity {
                         public void onFinish() {
                             MediaPlayer player = MediaPlayer.create(getApplicationContext(), R.raw.bell_sound);
                             player.start();
-                            resetTiemer();;
+                            resetTimer();;
                         }
                     };
                     timer.start();
                 } else {
-                    resetTiemer();
+                    resetTimer();
                 }
 
             }
@@ -112,13 +112,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @SuppressLint("SetTextI18n")
-    private void resetTiemer(){
+    private void resetTimer(){
         timer.cancel();
         timerBtn.setText("START");
-        clocktextView.setText("00:60");
+        clocktextView.setText("00:30");
         clocktextView.setTextColor(getResources().getColor(R.color.black));
         seekBar.setEnabled(true);
-        seekBar.setProgress(60);
+        seekBar.setProgress(30);
         isTimerOn = false;
         clocktextView.clearAnimation();
     }
