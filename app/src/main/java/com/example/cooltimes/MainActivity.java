@@ -1,11 +1,18 @@
 package com.example.cooltimes;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -75,9 +82,14 @@ public class MainActivity extends AppCompatActivity {
                         }
                         @Override
                         public void onFinish() {
-                            MediaPlayer player = MediaPlayer.create(getApplicationContext(), R.raw.bell_sound);
-                            player.start();
-                            resetTimer();;
+                            SharedPreferences sharedPreferences =
+                                    PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                            if (sharedPreferences.getBoolean("enable_sound", true)){
+                                MediaPlayer player = MediaPlayer.create(getApplicationContext(), R.raw.bell_sound);
+                                player.start();
+
+                            }
+                            resetTimer();
                         }
                     };
                     timer.start();
@@ -133,4 +145,24 @@ public class MainActivity extends AppCompatActivity {
         clocktextView.startAnimation(animation);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.time_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if (id==R.id.action_settings){
+            Intent openSettings = new Intent(this, SettingActivity.class);
+            startActivity(openSettings);
+            return true;
+        } else if(id == R.id.action_about){
+            Intent openAbout = new Intent(this, AboutActivity.class);
+            startActivity(openAbout);
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

@@ -4,6 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/User/AndroidStudioProjects/CoolTimes/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/CoolTimes/app/src/main/res/layout/activity_setting.xml" value="0.31302083333333336" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/CoolTimes/app/src/main/res/menu/time_menu.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/CoolTimes/app/src/main/res/xml/timer_preferences.xml" value="0.1522289766970618" />
       </map>
     </option>
   </component>

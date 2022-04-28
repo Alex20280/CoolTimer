@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_settings"
+        android:title="Settings"
+        android:icon="@drawable/ic_baseline_settings_white_24"
+        android:orderInCategory="100"
+        app:showAsAction="always">
+
+    </item>
+
+    <item
+        android:id="@+id/action_about"
+        android:title="About"
+        android:orderInCategory="110"
+        android:icon="@drawable/ic_baseline_question_white_24"
+        app:showAsAction="never">
+
+    </item>
+
+</menu>
